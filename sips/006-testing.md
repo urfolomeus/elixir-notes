@@ -1,6 +1,6 @@
 # Elixir Sips Ep. 6 - Testing
 
-Best to go look at the files in ../sips/006/schizo (not my choice of name).
+Best to go look at the files in [schizo](https://github.com/urfolomeus/sips/006/schizo) (not my choice of name).
 
 Pay special attention to doctests.
 
