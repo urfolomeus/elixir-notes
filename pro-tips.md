@@ -4,7 +4,7 @@ These are various tidbits found that might come in useful at some point. :)
 
 ## pattern matching for strings that start with a given value
 
-```
+```elixir
 def my_func("prefix" <> rest = value) do
   IO.puts "#{value} starts with \"prefix\""
 end
@@ -22,3 +22,14 @@ From the Elixir slack:
 > cpjk [5:54 AM]
 > Along with what @gerred said, OTP also provides nice behaviours for spawning processes to maintain state, so that you don't have to think about it. This [SO answer](http://stackoverflow.com/questions/26713811/how-to-maintain-state-in-erlang/26714738#26714738) might help.
 
+
+## getting the AST of some code
+
+`quote` returns the AST of some code
+
+```elixir
+iex(1)> quote do
+...(1)> 1 + 2
+...(1)> end
+{:+, [context: Elixir, import: Kernel], [1, 2]}
+```
