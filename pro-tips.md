@@ -33,3 +33,18 @@ iex(1)> quote do
 ...(1)> end
 {:+, [context: Elixir, import: Kernel], [1, 2]}
 ```
+
+## Module definitions contain a binary of their definition
+
+If you capture the output of a defined module you can see that the third item is a binary representation of the module which apparently means that you can pass the definition around from node to node and have it execute even though there is no local version of the definition.
+
+```elixir
+iex(1)> my_module = defmodule MyModule do
+...(1)>   def test(message) do
+...(1)>     message
+...(1)>   end
+...(1)> end
+{:module, MyModule,
+ <<70, 79, 82, 49, 0, 0, 4, 148, 66, 69, 65, 77, 69, 120, 68, 99, 0, 0, 0, 117, 131, 104, 2, 100, 0, 14, 101, 108, 105, 120, 105, 114, 95, 100, 111, 99, 115, 95, 118, 49, 108, 0, 0, 0, 2, 104, 2, ...>>,
+ {:test, 1}}
+```
