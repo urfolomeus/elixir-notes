@@ -2,6 +2,12 @@
 
 These are various tidbits found that might come in useful at some point. :)
 
+## storing history between IEx sessions
+
+1. `git clone git@github.com:ferd/erlang-history.git`
+2. `cd erlang-history`
+3. `sudo make install`
+
 ## pattern matching for strings that start with a given value
 
 ```elixir
